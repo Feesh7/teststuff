@@ -1,4 +1,4 @@
-import testmodule.mathlib as mathlib
+import game_engine.mathlib as mathlib
 
 class Entity(object):
     def __init__(self, position):

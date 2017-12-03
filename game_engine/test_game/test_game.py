@@ -1,5 +1,5 @@
-import testmodule.game as game
-import testmodule.input_system as input_system
+import game_engine.game as game
+import game_engine.input_system as input_system
 from .test_environment import TestEnvironment
 
 class TestGame(game.Game):

@@ -1,7 +1,7 @@
-from testmodule.utils import get_logger
-import testmodule.environment as environment
-import testmodule.mathlib as mathlib
-import testmodule.exceptions as exceptions
+from game_engine.utils import get_logger
+import game_engine.environment as environment
+import game_engine.mathlib as mathlib
+import game_engine.exceptions as exceptions
 
 class TestEnvironment(environment.Environment):
     def __init__(self, configuration=None):

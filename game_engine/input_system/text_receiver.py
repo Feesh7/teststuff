@@ -1,5 +1,5 @@
 from .input_receiver import InputReceiver
-from testmodule.utils import get_logger
+from game_engine.utils import get_logger
 
 class TextReceiver(InputReceiver):
     def __init__(self, configuration=None):

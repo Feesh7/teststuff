@@ -12,14 +12,15 @@ class TestEnvironment(environment.Environment):
         super().__init__()
 
     def handle_input(self):
-        try:
-            movement = self._input.split(",")
-            self._move_the_vector(movement)
-        except TypeError as ex:
-            print("Not a valid vector")
+        movement = self._input.split(",")
+        self._move_the_vector(movement)
 
     def _move_the_vector(self, movement):
-        self._state.add_to(mathlib.Vec(*movement))
+        try:
+            self._state.add_to(mathlib.Vec(*movement))
+        except TypeError as ex:
+            print("Not a valid vector")
+            return
 
         if self._state == mathlib.Vec(10,10,10):
             print("YOU MADE IT TO THE END!")

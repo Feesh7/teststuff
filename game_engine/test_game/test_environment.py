@@ -4,8 +4,10 @@ import game_engine.mathlib as mathlib
 import game_engine.exceptions as exceptions
 
 class TestEnvironment(environment.Environment):
-    def __init__(self, configuration=None, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, configuration, input_receiver, output_device):
+        super().__init__(configuration=configuration,
+                         input_receiver=input_receiver,
+                         output_device=output_device)
         self.logger = get_logger(self.__class__.__name__)
         self._state = mathlib.Vec(0,0,0)
         self.logger.debug("Test environment created.")

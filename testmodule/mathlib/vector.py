@@ -54,6 +54,8 @@ class Vec(object):
     def cross_to(self, vec):
         self._vec = self._cross(vec)
 
+    def equals(self, vec):
+        return self._equals(vec)
 
     """ internal methods """
     def _set(self, *args):
@@ -111,6 +113,12 @@ class Vec(object):
             raise TypeError("Cross product not supported between Vec and {}"
                             .format(type(vec)))
 
+    def _equals(self, vec):
+        if isinstance(vec, Vec):
+            return all([a==b for a,b in zzip(self._vec, vec._vec)])
+        else:
+            raise TypeError("Equals not supported between Vec and {}"
+                            .format(type(vec)))
 
     """ operator overloads """
     def __add__(self, vec):
@@ -127,6 +135,12 @@ class Vec(object):
         else:
             raise TypeError("Multiply operator not supported between Vec and {}"
                             .format(type(obj)))
+
+    def __eq__(self, vec):
+        return self.equals(vec)
+
+    def __ne__(self, vec):
+        return not self.equals(vec)
 
 
     """ data overloads """

@@ -1,10 +1,10 @@
-import testmodule.vectors as vectors
+import testmodule.mathlib as mathlib
 
-class entity(object):
+class Entity(object):
     def __init__(self, position):
-        if not isinstance(position, vectors.Vec):
+        if not isinstance(position, mathlib.Vec):
             try:
-                position = vectors.Vec(*position)
+                position = mathlib.Vec(*position)
             except Exception as ex:
                 raise TypeError("Input position is not valid")
         self._position = position

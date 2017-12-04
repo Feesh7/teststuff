@@ -1,9 +1,9 @@
-from .input_receiver import InputReceiver
+from .input_device import InputDevice
 from game_engine.utils import get_logger
 
-class TextReceiver(InputReceiver):
-    def __init__(self, configuration=None):
-        super().__init__(configuration=configuration)
+class TextReceiver(InputDevice):
+    def __init__(self, name='TextReceiver', configuration=None):
+        super().__init__(name=name, configuration=configuration)
         self.logger = get_logger(self.__class__.__name__)
         self.logger.debug("Text receiver created.")
 

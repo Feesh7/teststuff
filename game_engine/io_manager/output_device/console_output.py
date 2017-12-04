@@ -2,8 +2,8 @@ from .output_device import OutputDevice
 from game_engine.utils import get_logger
 
 class ConsoleOutput(OutputDevice):
-    def __init__(self, configuration=None):
-        super().__init__(configuration=configuration)
+    def __init__(self, name='ConsoleOutput', configuration=None):
+        super().__init__(name=name, configuration=configuration)
         self.logger = get_logger(self.__class__.__name__)
         self.logger.debug("Console output device created.")
 
